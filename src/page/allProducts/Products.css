@@ -1,0 +1,22 @@
+.all_img {
+    width: 100px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.brandName {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.product {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

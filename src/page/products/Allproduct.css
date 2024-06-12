@@ -1,0 +1,31 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+
+.pro_img{
+    width: 150px;
+}
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.product_info {
+    width:250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_box{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button_box > button {
+    margin: 5px;
+}
