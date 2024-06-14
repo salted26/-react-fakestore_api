@@ -1,11 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Products from "../allProducts/Products";
+import Products from "../products/Products";
 import {Button, Col, Container, Row} from "react-bootstrap";
 import './Allproduct.css'
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const AllProducts = () => {
 
+    const navigate = useNavigate();
     const [ product, setProduct ] = useState("")
     let { category } = useParams();
     let url = "";
@@ -48,6 +49,10 @@ const AllProducts = () => {
         getAllProducts(limit, sort)
     }
 
+    const handleAdd = () => {
+        navigate('/product/add');
+    }
+
     useEffect(() => {
         getAllProducts();
     }, [url]);
@@ -75,9 +80,8 @@ const AllProducts = () => {
                 </Row>
             </Container>
             <div className="button_box">
-                <Button variant="outline-success">등록</Button>
-                <Button variant="outline-primary">수정</Button>
-                <Button variant="outline-dark">삭제</Button>
+                <Button type="button" variant="outline-success" onClick={handleAdd}>등록</Button>
+                <Button type="button" variant="outline-dark">삭제</Button>
             </div>
         </div>
     );

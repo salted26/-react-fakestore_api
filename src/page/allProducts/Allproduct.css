@@ -24,6 +24,7 @@
 .button_box{
     display: flex;
     justify-content: flex-end;
+    align-items: end;
 }
 
 .button_box > button {

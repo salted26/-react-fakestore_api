@@ -1,7 +1,13 @@
 body {
-    width: 1800px;
+    width: auto;
+    max-width: 1800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.link {
+    text-decoration: black;
+    color: black;
 }

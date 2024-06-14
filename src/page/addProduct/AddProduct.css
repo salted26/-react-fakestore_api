@@ -1,0 +1,10 @@
+.btn_box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top : 10px;
+}
+
+.btn_box > button {
+    margin-left: 5px;
+}
