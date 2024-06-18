@@ -1,13 +1,16 @@
 body {
-    width: auto;
-    max-width: 1800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .link {
     text-decoration: black;
     color: black;
+}
+
+#root {
+    width: 100%;
 }

@@ -9,6 +9,7 @@ import UpdateProduct from "./page/updateProduct/UpdateProduct";
 import Login from "./Auth/login/Login";
 import Join from "./Auth/join/Join";
 import Carts from "./page/carts/Carts";
+import CartSingle from "./page/carts/cartSingle/CartSingle";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/join" element={<Join />} />
             <Route path="/carts" element={<Carts />} />
+            <Route path="/carts/:id" element={<CartSingle />} />
         </Routes>
     </div>
   );

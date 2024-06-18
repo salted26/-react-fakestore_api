@@ -1,0 +1,62 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    height: 100px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu > span {
+    margin-right: 100px;
+}
+
+.table {
+    align-items: center;
+    text-align: center;
+}
+
+.product_name {
+    text-align: left;
+}
+
+.item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-info .item_id {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.item_product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-lg-3 {
+    width: 250px;
+}
+
+.detailInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    border-bottom: 1px solid grey;
+}
+
+.product_img {
+    width: 30px;
+}
+
+.cart_product {
+    cursor: pointer;
+}
