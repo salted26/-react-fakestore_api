@@ -13,9 +13,14 @@
     margin-right: 100px;
 }
 
-.table {
+table {
     align-items: center;
     text-align: center;
+}
+
+input {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
 }
 
 .product_name {
@@ -60,3 +65,14 @@
 .cart_product {
     cursor: pointer;
 }
+
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity > input {
+    width: 100px;
+}
+

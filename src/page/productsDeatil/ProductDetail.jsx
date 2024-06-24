@@ -32,6 +32,23 @@ const ProductDetail = () => {
         getProductDetail()
     }, []);
 
+    const onSubmit = async (data) =>{
+        url = 'https://fakestoreapi.com/carts';
+        await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(
+                {
+                    userId: 5,
+                    date: new Date(),
+                    products: [{
+                        productId: id,
+                        quantity: data.quantity
+                    }]
+                }
+            )
+        });
+    }
+
     return (
         <>
             <Container>
@@ -49,7 +66,7 @@ const ProductDetail = () => {
                             <div className="description">{product?.description}</div>
                         </div>
                         <div className="cart-in">
-                            <form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <label htmlFor="quantity">수량</label>
                                 <select name="quantity" className="form-select-sm" {...register("quantity")}>
                                     <option value="1">1</option>

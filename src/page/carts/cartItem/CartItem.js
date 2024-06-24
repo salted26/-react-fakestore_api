@@ -11,7 +11,7 @@ const CartItem = ({ item }) => {
                     <td>{item?.id}</td>
                     <td>{products.productId}</td>
                     <CartDetail id={item.id} products={products}/>
-                    <td>{products.quantity} 개</td>
+                    <td><input type="text" value={products.quantity} /> 개</td>
                     <td>{item?.date.substring(0,10)}</td>
                 </tr>
             )}

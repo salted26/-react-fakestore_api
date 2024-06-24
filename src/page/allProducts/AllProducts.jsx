@@ -59,18 +59,18 @@ const AllProducts = () => {
 
     return (
         <div>
-            <div className="sort">
-                <select name="limit" onChange={handleLimit}>
-                    <option value="">ALL</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                </select>
-                &nbsp;&nbsp;
-                <input type="radio" value="asc" name="sort" onClick={handleSort}/>&nbsp;오름차순&nbsp;&nbsp;
-                <input type="radio" value="desc" name="sort" onClick={handleSort}/>&nbsp;내림차순&nbsp;&nbsp;
-            </div>
             <Container>
+                <div className="sort">
+                    <select name="limit" onChange={handleLimit}>
+                        <option value="">ALL</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                    &nbsp;&nbsp;
+                    <input type="radio" value="asc" name="sort" onClick={handleSort}/>&nbsp;오름차순&nbsp;&nbsp;
+                    <input type="radio" value="desc" name="sort" onClick={handleSort}/>&nbsp;내림차순&nbsp;&nbsp;
+                </div>
                 <Row>
                     {product && product.map((product, index) =>
                         <Col lg={3} key={index} className="product_info">
@@ -78,11 +78,12 @@ const AllProducts = () => {
                         </Col>
                     )}
                 </Row>
+                <div className="button_box">
+                    <Button type="button" variant="outline-success" onClick={handleAdd}>등록</Button>
+                    <Button type="button" variant="outline-dark">삭제</Button>
+                </div>
             </Container>
-            <div className="button_box">
-                <Button type="button" variant="outline-success" onClick={handleAdd}>등록</Button>
-                <Button type="button" variant="outline-dark">삭제</Button>
-            </div>
+
         </div>
     );
 };

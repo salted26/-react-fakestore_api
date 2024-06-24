@@ -4,15 +4,16 @@ import CartItem from "./cartItem/CartItem";
 import {Button, Container} from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
-import {useForm} from "react-hook-form";
 
 const Carts = () => {
 
     let url = '';
+
+    const calendar = useRef(null);
+
     const [ carts, setCarts ] = useState();
     const [ startDate, setStartDate ] = useState(new Date());
     const [ endDate, setEndDate ] = useState(new Date());
-    const { register, handleSubmit, formState: {isSubmitting} } = useForm();
 
     let limit = useRef('');
     let sort = useRef('');
@@ -29,7 +30,6 @@ const Carts = () => {
     }
 
     const handleLimit = (event) => {
-        limit.current = event.target.value;
         getCartProducts(limit, sort);
     }
 
@@ -39,15 +39,10 @@ const Carts = () => {
     }
 
     const onSubmit = async () =>{
-        console.log(startDate, endDate)
-        try {
-            url = `https://fakestoreapi.com/carts/satrtdate=${startDate}&enddate=${endDate}`;
-            await new Promise((r) => setTimeout(r, 1000));
-            let response = await fetch(url)
-            let data = await response.json();
-            console.log(data);
-        } catch (errors) {
-        }
+        url = `https://fakestoreapi.com/carts?startdate=${startDate}&enddate=${endDate}`;
+        let response = await fetch(url)
+        let data = await response.json();
+        console.log("data" , data);
     }
 
     useEffect(() => {
@@ -59,16 +54,14 @@ const Carts = () => {
             <Container>
                 <div className="list">
                     <div className="date">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <DatePicker dateFormat="yyyy-MM-dd" selected={startDate} onChange={date => setStartDate(date)} className="datePicker" name="startDate"/>
-                            &nbsp;&nbsp;~&nbsp;&nbsp;
-                            <DatePicker dateFormat="yyyy-MM-dd" selected={endDate} onChange={date => setEndDate(date)} className="datePicker" name="endDate"/>
-                            <Button variant="outline-secondary" type="submit" disabled={isSubmitting}>검색</Button>
-                        </form>
+                        <DatePicker dateFormat="yyyy-MM-dd" selected={startDate} onChange={date => setStartDate(date)} className="datePicker"/>
+                        &nbsp;&nbsp;~&nbsp;&nbsp;
+                        <DatePicker dateFormat="yyyy-MM-dd" selected={endDate} onChange={date => setEndDate(date)} className="datePicker"/>
+                        <Button variant="outline-secondary" type="button" onClick={onSubmit}>검색</Button>
                     </div>
                     <div className="list_sort">
                         <select name="limit" onChange={handleLimit} className="limit">
-                            <option value="">ALL</option>
+                            <option >ALL</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="20">20</option>

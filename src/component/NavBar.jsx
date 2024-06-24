@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './NavBar.css';
 import {useNavigate} from "react-router-dom";
+import {Container} from "react-bootstrap";
 
 const NavBar = () => {
 
@@ -23,6 +24,7 @@ const NavBar = () => {
 
     return (
         <>
+            <Container>
             <div className="top">
                 <ul className="top_item">
                     <li><a href="/login" className="link">로그인</a>&nbsp;&nbsp;&nbsp;</li>
@@ -38,6 +40,7 @@ const NavBar = () => {
                 )}
                 </ul>
             </div>
+            </Container>
         </>
     );
 };

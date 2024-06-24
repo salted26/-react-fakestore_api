@@ -8,7 +8,6 @@ const CartDetail = ({id, products}) => {
     const navigate = useNavigate();
 
     const handleDetail = (e) => {
-        alert("");
         navigate(`/carts/${id}`);
     }
 
